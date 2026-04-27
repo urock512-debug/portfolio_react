@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: command === 'serve' ? '/' : '/yurii-designer/',
+  base: command === 'serve' ? '/' : '/portfolio_react/',
 }))

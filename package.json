@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://tikigeek.github.io/yurii-designer",
+  "homepage": "https://urock512-debug.github.io/portfolio_react",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
