@@ -1,0 +1,233 @@
+/* ─── Work Section ─── */
+.work {
+  padding: 100px 0;
+  position: relative;
+}
+
+.work__heading {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+}
+
+.project-card__title {
+  font-family: var(--font-display);
+  font-size: 32px;
+}
+
+.work__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Grid layout - 2 columns per row */
+.work__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Glassmorphism card with gradient glow */
+.project-card.glass {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Preview area */
+.project-card__image {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  height: 300px;
+  z-index: 0;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Thumbnail image */
+.project-card__thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  transition: opacity 0.35s ease;
+}
+
+/* Hover video — hidden by default, fades in on hover */
+.project-card__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.project-card__video.is-playing {
+  opacity: 1;
+}
+
+/* When video is playing, slightly dim the thumbnail underneath */
+.project-card:hover .project-card__thumb {
+  opacity: 0.15;
+}
+
+/* Play hint icon (bottom-right corner) */
+.project-card__play-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.project-card:hover .project-card__play-hint {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Gradient glow behind cards */
+.project-card__glow {
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.project-card.glowing .project-card__glow {
+  opacity: 1;
+}
+
+/* Gradient border effect */
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 40%, transparent 60%, rgba(255, 255, 255, 0.1));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.6;
+}
+
+/* Top area with logo and arrow */
+.project-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.project-card__logo-wrap {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card__arrow {
+  color: #8b5cf6;
+  transition: transform 0.3s ease;
+}
+
+/* Tags with gradient */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--accent-soft);
+  border: 1px solid rgba(124, 111, 255, 0.25);
+  color: var(--accent-2);
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* Title and description */
+.project-card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem 0;
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.3;
+}
+
+.project-card__desc {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Card hover effects */
+.project-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover .project-card__glow {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .work__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .work .container {
+    padding: 0;
+  }
+
+  .work__header {
+    padding: 0 var(--container-pad);
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+}
