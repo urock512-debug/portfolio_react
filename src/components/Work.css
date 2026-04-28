@@ -46,7 +46,8 @@
   position: relative;
   width: 100%;
   border-radius: 12px;
-  height: 300px;
+  aspect-ratio: 16 / 9;
+  max-height: 320px;
   z-index: 0;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.04);
@@ -219,15 +220,21 @@
     gap: 1rem;
   }
 
-  .work .container {
-    padding: 0;
-  }
-
   .work__header {
     padding: 0 var(--container-pad);
   }
 
-  .project-card {
-    padding: 1.5rem;
+  .project-card.glass {
+    border-radius: 16px;
+    padding: 1.25rem;
+  }
+
+  /* On mobile, allow natural aspect-ratio — no max-height clamp */
+  .project-card__image {
+    max-height: none;
+  }
+
+  .project-card__title {
+    font-size: 1.25rem;
   }
 }
