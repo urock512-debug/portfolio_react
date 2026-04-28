@@ -1,55 +1,48 @@
 /* ─── About Me Section ─── */
 import { motion } from 'framer-motion'
 import { asset } from '../utils/asset'
+import { useT } from '../hooks/useT'
 import './AboutMe.css'
 
-// Skill data with icons
-const skills = [
-  { name: 'UX Research',     icon: '/icons/search.svg' },
-  { name: 'UI Design',       icon: '/icons/design.svg' },
-  { name: 'Prototyping',     icon: '/icons/play.svg' },
-  { name: 'Design Systems',  icon: '/icons/designsystem.svg' },
-  { name: 'Web Development', icon: '/icons/code.svg' },
-  { name: 'WordPress',       icon: '/icons/wordpress.svg' },
-]
-
-// Stats data
-const stats = [
-  { number: '10+', label: 'Years of experience' },
-  { number: '300+', label: 'Projects completed' },
-  { number: '200+', label: 'Happy clients' },
-  { number: '6+', label: 'Industries' }
+const skillIcons = [
+  '/icons/search.svg',
+  '/icons/design.svg',
+  '/icons/play.svg',
+  '/icons/designsystem.svg',
+  '/icons/code.svg',
+  '/icons/wordpress.svg',
 ]
 
 const AboutMe = () => {
+  const t = useT()
+
   return (
     <section className="about-me glass" id="about-me">
       {/* Glassmorphism glow effect */}
       <div className="about-me__glow" />
-      
+
       <div className="about-me__grid">
         {/* Left column - intro */}
         <div className="about-me__left">
-          <div className="about-me__badge">About me</div>
-          
+          <div className="about-me__badge">{t.about.badge}</div>
+
           <h2 className="about-me__title">
-            I combine design thinking with technical skills
+            {t.about.title}
           </h2>
-          
+
           <p className="about-me__description">
-            I help startups and companies turn ideas into real, production-ready digital products. 
-            I enjoy solving complex problems and creating simple, intuitive experiences.
+            {t.about.desc}
           </p>
         </div>
-        
+
         {/* Right column - skills & stats */}
         <div className="about-me__right">
           {/* Skills section */}
           <div className="about-me__skills">
             <div className="about-me__skills-grid">
-              {skills.map((skill, index) => (
+              {t.about.skills.map((skillName, index) => (
                 <motion.div
-                  key={skill.name}
+                  key={skillName}
                   className="skill-card glass"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -57,18 +50,18 @@ const AboutMe = () => {
                   viewport={{ once: true }}
                 >
                   <div className="skill-card__icon">
-                    <img src={asset(skill.icon)} alt={skill.name} width="22" height="22" />
+                    <img src={asset(skillIcons[index])} alt={skillName} width="22" height="22" />
                   </div>
-                  <span className="skill-card__title">{skill.name}</span>
+                  <span className="skill-card__title">{skillName}</span>
                 </motion.div>
               ))}
             </div>
           </div>
-          
+
           {/* Stats section */}
           <div className="about-me__stats">
             <div className="about-me__stats-grid">
-              {stats.map((stat, index) => (
+              {t.about.stats.map((stat, index) => (
                 <motion.div
                   key={index}
                   className="stat-card"

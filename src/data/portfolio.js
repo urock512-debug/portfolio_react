@@ -4,6 +4,7 @@ export const projects = [
     title: 'AX CAPITAL',
     subtitle: 'The Most Trusted Real Estate Agency in Dubai',
     description: 'UX/UI design for a premium real estate agency. Focused on lead generation, conversion and brand positioning.',
+    descriptionRu: 'UX/UI дизайн для премиального агентства недвижимости. Фокус на лидогенерации, конверсии и позиционировании бренда.',
     tags: ['Real Estate', 'Corporate Website'],
     url: 'https://axcapital.ae',
     color: '#1a1a2e',
@@ -55,9 +56,23 @@ export const projects = [
             { image: '/media/axspacing.jpg' },
           ]
         },
-        { type: 'quote', text: "The new design turned our website into our best-performing sales channel.", author: 'AX Capital Marketing Team' },
+        { type: 'quote', text: "The new design turned our website into our best-performing sales channel.", textRu: '«Новый дизайн превратил наш сайт в лучший канал продаж.»', author: 'AX Capital Marketing Team' },
         { type: 'grid-masonry', label: 'Visual identity applied across product' },
       ],
+      ru: {
+        overview:
+          "AX Capital — одно из ведущих агентств недвижимости Дубая, ежегодно проводящее сделки на миллиарды долларов. Задача — редизайн цифрового присутствия бренда, отражающий его премиальное позиционирование и значительно улучшающий лидогенерацию.",
+        challenge:
+          "Существующий сайт страдал от фрагментированного UX, низкой мобильной производительности и отсутствия чёткой конверсионной воронки. Лиды терялись в нескольких точках контакта.",
+        solution:
+          "Мы полностью переработали информационную архитектуру, внедрили удобный поиск объектов и создали дизайн-систему, соответствующую премиальному стилю бренда. Каждый экран оптимизирован для конверсии с чёткими CTA и элементами доверия.",
+        results: [
+          { value: '+58%', label: 'Конверсия лидов' },
+          { value: '2.4×', label: 'Длительность сессии' },
+          { value: '-34%', label: 'Показатель отказов' },
+          { value: '#1', label: 'Позиция в Google' },
+        ],
+      },
     },
   },
   {
@@ -65,6 +80,7 @@ export const projects = [
     title: 'ARO',
     subtitle: 'PropTech · Platform',
     description: 'Redesign of a unique B2B & B2C platform with 3D interactive map of Dubai for property listings and exploration.',
+    descriptionRu: 'Редизайн уникальной B2B & B2C платформы с 3D интерактивной картой Дубая для поиска и просмотра объектов недвижимости.',
     tags: ['PropTech', 'Platform'],
     url: 'https://aro.ae',
     color: '#0a1628',
@@ -111,9 +127,23 @@ export const projects = [
           ]
         },
         { type: 'grid-3', ratio: '1/1', label: 'Mobile app screens' },
-        { type: 'quote', text: "ARO's new design made complex data feel effortless to navigate.", author: 'ARO Product Team' },
+        { type: 'quote', text: "ARO's new design made complex data feel effortless to navigate.", textRu: '«Новый дизайн ARO сделал сложные данные интуитивно понятными.»', author: 'ARO Product Team' },
         { type: 'grid-masonry', label: 'Component library highlights' },
       ],
+      ru: {
+        overview:
+          "ARO — платформа нового поколения для рынка недвижимости, объединяющая интерактивную 3D-карту Дубая с умным поиском объектов для покупателей и агентов. Задача — создать сложный B2B/B2C продукт, интуитивно понятный для всех типов пользователей.",
+        challenge:
+          "Платформа должна была обслуживать две совершенно разные аудитории — покупателей недвижимости, желающих исследовать Дубай визуально, и агентов, управляющих объявлениями и пайплайнами — в рамках единого согласованного интерфейса.",
+        solution:
+          "Мы разработали контекстно-адаптивный UI, меняющий основные флоу в зависимости от роли пользователя. 3D-карта стала центральным элементом B2C-опыта, а B2B-дашборд был переработан в насыщенный данными, но легко сканируемый интерфейс.",
+        results: [
+          { value: '3×', label: 'Удержание агентов' },
+          { value: '+71%', label: 'Вовлечённость в карту' },
+          { value: '-45%', label: 'Отток при онбординге' },
+          { value: '4.8★', label: 'Рейтинг в App Store' },
+        ],
+      },
     },
   },
   {
@@ -121,6 +151,7 @@ export const projects = [
     title: 'Paxful',
     subtitle: 'P2P Crypto Marketplace',
     description: 'Freelance UI design for landing and marketing pages. Created custom vector icon set used across Security Features section.',
+    descriptionRu: 'Freelance UI дизайн лендингов и маркетинговых страниц. Создание кастомного набора иконок для раздела Безопасности.',
     tags: ['Fintech', 'Crypto'],
     url: null,
     color: '#0e1a14',
@@ -148,9 +179,23 @@ export const projects = [
         { type: 'grid-2', ratio: '4/3', label: 'Security section before & after' },
         { type: 'fullwidth', ratio: '21/9', label: 'Icon system overview' },
         { type: 'grid-3', ratio: '1/1', label: 'Individual icon designs' },
-        { type: 'quote', text: "The icon set gave our security messaging the credibility it needed.", author: 'Paxful Design Team' },
+        { type: 'quote', text: "The icon set gave our security messaging the credibility it needed.", textRu: '«Иконки придали нашим материалам о безопасности необходимую убедительность.»', author: 'Paxful Design Team' },
         { type: 'grid-masonry', label: 'Marketing page variations' },
       ],
+      ru: {
+        overview:
+          "Paxful — один из крупнейших в мире P2P-маркетплейсов для Bitcoin. Меня привлекли для редизайна ключевых маркетинговых страниц и создания единого набора кастомных иконок для раздела Безопасности.",
+        challenge:
+          "Маркетинговые страницы страдали от визуальной непоследовательности и не внушали доверия — критического фактора для криптоплатформы. Раздел «Безопасность» выглядел особенно слабо и неубедительно.",
+        solution:
+          "Я разработал кастомный набор из 40+ иконок, согласованных с языком бренда, и пересобрал лендинги с более сильной визуальной иерархией, чистой вёрсткой и убедительными сигналами доверия.",
+        results: [
+          { value: '40+', label: 'Иконок создано' },
+          { value: '+22%', label: 'Конверсия страниц' },
+          { value: '2 мес', label: 'Срок сдачи' },
+          { value: '100%', label: 'Консистентность бренда' },
+        ],
+      },
     },
   },
   {
@@ -158,6 +203,7 @@ export const projects = [
     title: 'Big Apple Moving',
     subtitle: 'Dubai Movers You Can Trust',
     description: 'Website redesign on WordPress with custom plugin development for booking and inventory management.',
+    descriptionRu: 'Редизайн сайта на WordPress с разработкой кастомного плагина для бронирования и управления инвентарём.',
     tags: ['Logistics', 'Corporate Website'],
     url: 'https://bigapplemoving.com',
     color: '#1a1208',
@@ -198,9 +244,23 @@ export const projects = [
         { type: 'grid-2', ratio: '4/3', label: 'Booking flow & quote calculator' },
         { type: 'fullwidth', ratio: '21/9', label: 'Services overview page' },
         { type: 'grid-3', ratio: '1/1', label: 'Mobile screens' },
-        { type: 'quote', text: "The booking plugin transformed how we run the business — it's now our main sales channel.", author: 'Big Apple Moving Management' },
+        { type: 'quote', text: "The booking plugin transformed how we run the business — it's now our main sales channel.", textRu: '«Плагин бронирования изменил наш бизнес — теперь это наш главный канал продаж.»', author: 'Big Apple Moving Management' },
         { type: 'grid-masonry', label: 'UI details & interactions' },
       ],
+      ru: {
+        overview:
+          "Big Apple Moving — дубайская компания по переезду, обслуживающая как частных, так и корпоративных клиентов. Проект включал полный редизайн сайта и разработку кастомного плагина WordPress для онлайн-бронирования и учёта имущества.",
+        challenge:
+          "Старый сайт был устаревшим, неудобным на мобильных и полностью зависел от телефонных звонков для приёма заявок. У клиентов не было возможности получить мгновенный расчёт или отследить статус переезда.",
+        solution:
+          "Мы создали современный доверительный дизайн и разработали кастомный плагин бронирования, рассчитывающий стоимость переезда в реальном времени на основе описи, расстояния и уровня услуг. Теперь клиенты могут отслеживать свой заказ онлайн.",
+        results: [
+          { value: '+180%', label: 'Онлайн-бронирований' },
+          { value: '-60%', label: 'Звонков в офис' },
+          { value: '5★', label: 'Рейтинг Google' },
+          { value: '2×', label: 'Ежемесячная выручка' },
+        ],
+      },
     },
   },
 ]

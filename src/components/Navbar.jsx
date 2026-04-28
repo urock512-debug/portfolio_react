@@ -1,18 +1,25 @@
 /* Navbar component */
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { useLang } from '../context/LangContext'
+import { useT } from '../hooks/useT'
 import './Navbar.css'
-
-const navLinks = [
-  { label: 'Work', href: '#work' },
-  { label: 'About', href: '#about-me' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
-]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { lang } = useLang()
+  const t = useT()
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const navLinks = [
+    { label: t.nav.work,    href: '#work' },
+    { label: t.nav.about,   href: '#about-me' },
+    { label: t.nav.skills,  href: '#skills' },
+    { label: t.nav.contact, href: '#contact' },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
@@ -25,6 +32,18 @@ export default function Navbar() {
     setMobileOpen(false)
     const el = document.querySelector(href)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  /* Switch language, preserving current route */
+  const switchLang = (targetLang) => {
+    const path = location.pathname
+    if (targetLang === 'ru') {
+      const newPath = path.startsWith('/ru') ? path : '/ru' + (path === '/' ? '' : path)
+      navigate(newPath || '/ru')
+    } else {
+      const newPath = path.replace(/^\/ru/, '') || '/'
+      navigate(newPath)
+    }
   }
 
   return (
@@ -56,6 +75,29 @@ export default function Navbar() {
           ))}
         </ul>
 
+        {/* Language switcher */}
+        <div className="navbar__lang">
+          <svg className="navbar__lang-globe" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+            <path d="M12 2C12 2 8 7 8 12s4 10 4 10M12 2c0 0 4 5 4 10s-4 10-4 10M2 12h20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
+          <button
+            className={`navbar__lang-btn ${lang === 'en' ? 'active' : ''}`}
+            onClick={() => switchLang('en')}
+            aria-label="Switch to English"
+          >
+            EN
+          </button>
+          <span className="navbar__lang-sep">/</span>
+          <button
+            className={`navbar__lang-btn ${lang === 'ru' ? 'active' : ''}`}
+            onClick={() => switchLang('ru')}
+            aria-label="Переключить на русский"
+          >
+            RU
+          </button>
+        </div>
+
         {/* CTA */}
         <a
           href="#contact"
@@ -63,7 +105,7 @@ export default function Navbar() {
           onClick={(e) => handleNavClick(e, '#contact')}
           id="navbar-cta"
         >
-          Get in touch
+          {t.nav.cta}
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -101,13 +143,29 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          {/* Mobile lang switcher */}
+          <div className="navbar__lang navbar__lang--mobile">
+            <svg className="navbar__lang-globe" width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+              <path d="M12 2C12 2 8 7 8 12s4 10 4 10M12 2c0 0 4 5 4 10s-4 10-4 10M2 12h20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+            <button
+              className={`navbar__lang-btn ${lang === 'en' ? 'active' : ''}`}
+              onClick={() => { switchLang('en'); setMobileOpen(false) }}
+            >EN</button>
+            <span className="navbar__lang-sep">/</span>
+            <button
+              className={`navbar__lang-btn ${lang === 'ru' ? 'active' : ''}`}
+              onClick={() => { switchLang('ru'); setMobileOpen(false) }}
+            >RU</button>
+          </div>
           <a
             href="#contact"
             className="btn btn-primary"
             style={{ marginTop: '8px', justifyContent: 'center' }}
             onClick={(e) => handleNavClick(e, '#contact')}
           >
-            Get in touch
+            {t.nav.cta}
           </a>
         </motion.div>
       )}

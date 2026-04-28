@@ -8,6 +8,7 @@ import AboutMe from './components/AboutMe'
 import CTA from './components/CTA'
 import AuroraBackground from './components/ui/AuroraBackground'
 import CasePage from './pages/CasePage'
+import { LangProvider } from './context/LangContext'
 
 function HomePage() {
   return (
@@ -31,13 +32,20 @@ function App() {
   const location = useLocation()
 
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/case/:id" element={<CasePage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </AnimatePresence>
+    <LangProvider>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          {/* English routes */}
+          <Route path="/"           element={<HomePage />} />
+          <Route path="/case/:id"   element={<CasePage />} />
+          {/* Russian routes */}
+          <Route path="/ru"         element={<HomePage />} />
+          <Route path="/ru/case/:id" element={<CasePage />} />
+          {/* Fallback */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AnimatePresence>
+    </LangProvider>
   )
 }
 

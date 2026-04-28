@@ -1,8 +1,8 @@
 /* ─── CTA Section ─── */
 import { motion } from 'framer-motion'
 import { asset } from '../utils/asset'
+import { useT } from '../hooks/useT'
 import './CTA.css'
-
 
 const ctaFadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -12,55 +12,40 @@ const ctaFadeUp = {
     transition: { duration: 0.6, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] },
   }),
 }
-// Анимация для контейнера правой колонки (заголовок + список)
+
 const contactLinksVariants = {
   hidden: { opacity: 0, x: 30 },
-  visible: (i = 0) => ({
+  visible: () => ({
     opacity: 1,
     x: 0,
-    transition: { 
-      duration: 0.6, 
-      delay: 0.3, // задержка после появления левой колонки
-      ease: [0.25, 0.46, 0.45, 0.94] 
-    },
+    transition: { duration: 0.6, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] },
   }),
 }
-// Анимация для каждого отдельного элемента списка (появление справа по очереди)
+
 const contactLinkItemVariants = {
   hidden: { opacity: 0, x: 30 },
   visible: (i = 0) => ({
     opacity: 1,
     x: 0,
-    transition: { 
-      duration: 0.5, 
-      delay: i * 0.2, // каждый следующий появляется через 0.2s
-      ease: [0.25, 0.46, 0.45, 0.94] 
-    },
+    transition: { duration: 0.5, delay: i * 0.2, ease: [0.25, 0.46, 0.45, 0.94] },
   }),
 }
 
-const CTA = () => {
-  const contactLinks = [
-    {
-      icon: <img src={asset('/icons/email.svg')} alt="Email" width="24" height="24" />,
-      label: 'Email',
-      value: 'mailto:urock512@gmail.com',
-      shortvalue: 'urock512@gmail.com',
-    },
-    {
-      icon: <img src={asset('/icons/linkedin.svg')} alt="LinkedIn" width="24" height="24" />,
-      label: 'LinkedIn',
-      value: 'https://linkedin.com/in/tikigeek',
-      shortvalue: 'linkedin.com/in/tikigeek',
-    },
-    {
-      icon: <img src={asset('/icons/telegram.svg')} alt="Telegram" width="24" height="24" />,
-      label: 'Telegram',
-      value: 'http://t.me/iurii_t',
-      shortvalue: '@iurii_t',
-    },
-  ]
+const contactData = [
+  { icon: '/icons/email.svg',    value: 'mailto:urock512@gmail.com' },
+  { icon: '/icons/linkedin.svg', value: 'https://linkedin.com/in/tikigeek' },
+  { icon: '/icons/telegram.svg', value: 'http://t.me/iurii_t' },
+]
 
+const CTA = () => {
+  const t = useT()
+
+  const contactLinks = contactData.map((d, i) => ({
+    ...d,
+    label: t.cta.links[i].label,
+    shortvalue: t.cta.links[i].shortvalue,
+    icon: <img src={asset(d.icon)} alt={t.cta.links[i].label} width="24" height="24" />,
+  }))
 
   return (
     <section className="cta" id="contact">
@@ -80,7 +65,7 @@ const CTA = () => {
             variants={ctaFadeUp}
             custom={0}
           >
-            Let's work together
+            {t.cta.badge}
           </motion.span>
           <motion.h2
             className="cta__title"
@@ -90,7 +75,7 @@ const CTA = () => {
             variants={ctaFadeUp}
             custom={1}
           >
-            <span className="hero__title-accent">Let's create</span> your next project
+            <span className="hero__title-accent">{t.cta.title}</span> {t.cta.titleSuffix}
           </motion.h2>
           <motion.p
             className="cta__subtitle"
@@ -100,8 +85,7 @@ const CTA = () => {
             variants={ctaFadeUp}
             custom={2}
           >
-            I'm available for new opportunities and exciting projects. 
-            Let's build something great together.
+            {t.cta.subtitle}
           </motion.p>
           <motion.div
             className="cta__buttons"
@@ -112,14 +96,13 @@ const CTA = () => {
             custom={3}
           >
             <a href="http://t.me/iurii_t" target="_blank" className="cta-btn btn btn-primary cta-btn--primary">
-              Get in touch
+              {t.cta.btnContact}
             </a>
             <a href="#work" className="cta-btn btn btn-ghost cta-btn--secondary">
-              View my work
+              {t.cta.btnWork}
             </a>
           </motion.div>
         </div>
-
 
         {/* Right Column */}
         <motion.div
@@ -157,6 +140,5 @@ const CTA = () => {
     </section>
   )
 }
-
 
 export default CTA

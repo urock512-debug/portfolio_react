@@ -4,6 +4,8 @@ import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { projects } from '../data/portfolio'
 import { asset } from '../utils/asset'
+import { useT } from '../hooks/useT'
+import { useLang } from '../context/LangContext'
 import './Work.css'
 
 const fadeUp = {
@@ -39,6 +41,10 @@ const projectIcons = {
 }
 
 export default function Work() {
+  const t = useT()
+  const { lang } = useLang()
+  const casePrefix = lang === 'ru' ? '/ru/case' : '/case'
+
   return (
     <section className="work" id="work" aria-label="Selected projects">
       <div className="container">
@@ -50,9 +56,9 @@ export default function Work() {
           viewport={{ once: true, margin: '-60px' }}
           variants={fadeUp}
         >
-          <h2 className="work__heading">Selected Work</h2>
+          <h2 className="work__heading">{t.work.heading}</h2>
           <a href="#contact" className="work__all-link btn btn-ghost">
-            View all projects
+            {t.work.viewAll}
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -67,7 +73,7 @@ export default function Work() {
           viewport={{ once: true, margin: '-60px' }}
         >
           {projects.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} />
+            <ProjectCard key={project.id} project={project} index={i} casePrefix={casePrefix} />
           ))}
         </motion.div>
       </div>
@@ -75,7 +81,7 @@ export default function Work() {
   )
 }
 
-function ProjectCard({ project, index }) {
+function ProjectCard({ project, index, casePrefix }) {
   const isExternal = !!project.url
   const videoRef = useRef(null)
   const [isHovered, setIsHovered] = useState(false)
@@ -167,14 +173,14 @@ function ProjectCard({ project, index }) {
       {/* Body */}
       <div className="project-card__body">
         <h3 className="project-card__title">{project.title}</h3>
-        <p className="project-card__desc">{project.description}</p>
+        <p className="project-card__desc">{casePrefix.startsWith('/ru') && project.descriptionRu ? project.descriptionRu : project.description}</p>
       </div>
     </motion.article>
   )
 
   return (
     <Link
-      to={`/case/${project.id}`}
+      to={`${casePrefix}/${project.id}`}
       className="project-card-link"
       aria-label={`View ${project.title} case study`}
     >

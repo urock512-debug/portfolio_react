@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import { projects } from '../data/portfolio'
 import { asset } from '../utils/asset'
+import { useT } from '../hooks/useT'
+import { useLang } from '../context/LangContext'
 import './CasePage.css'
 
 /* ── Animation variants ── */
@@ -62,7 +64,7 @@ function Placeholder({ ratio = '16/9', label, image, video }) {
 }
 
 /* ── Media section renderer ── */
-function CaseSection({ section, accentColor }) {
+function CaseSection({ section, accentColor, lang }) {
   switch (section.type) {
     case 'hero':
       return (
@@ -144,7 +146,7 @@ function CaseSection({ section, accentColor }) {
           style={{ '--accent': accentColor }}
         >
           <div className="case-quote__bar" />
-          <blockquote className="case-quote__text">"{section.text}"</blockquote>
+          <blockquote className="case-quote__text">"{lang === 'ru' && section.textRu ? section.textRu : section.text}"</blockquote>
           {section.author && <cite className="case-quote__author">— {section.author}</cite>}
         </motion.div>
       )
@@ -157,11 +159,17 @@ function CaseSection({ section, accentColor }) {
 /* ── Main page component ── */
 export default function CasePage() {
   const { id } = useParams()
+  const t = useT()
+  const { lang } = useLang()
+  const casePrefix = lang === 'ru' ? '/ru/case' : '/case'
   const navigate = useNavigate()
   const heroRef = useRef(null)
 
   const project = projects.find((p) => p.id === id)
   const cs = project?.caseStudy
+
+  // Pick localised text: fall back to EN if ru block missing
+  const loc = (lang === 'ru' && cs?.ru) ? cs.ru : cs
 
   /* Scroll to top on mount */
   useEffect(() => {
@@ -181,8 +189,8 @@ export default function CasePage() {
   if (!project || !cs) {
     return (
       <div className="case-not-found">
-        <h1>Project not found</h1>
-        <Link to="/">← Back to portfolio</Link>
+        <h1>{t.case.notFound}</h1>
+        <Link to="/">{t.case.backToPortfolio}</Link>
       </div>
     )
   }
@@ -206,7 +214,7 @@ export default function CasePage() {
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
             <path d="M15 9H3M3 9l5-5M3 9l5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-          Back
+          {t.case.back}
         </button>
       </motion.div>
 
@@ -239,19 +247,19 @@ export default function CasePage() {
             {/* Meta strip */}
             <motion.div className="case-hero__meta" variants={fadeUp} initial="hidden" animate="visible" custom={3}>
               <div className="case-meta-item">
-                <span className="case-meta-item__label">Year</span>
+                <span className="case-meta-item__label">{t.case.meta.year}</span>
                 <span className="case-meta-item__value">{cs.year}</span>
               </div>
               <div className="case-meta-item">
-                <span className="case-meta-item__label">Role</span>
+                <span className="case-meta-item__label">{t.case.meta.role}</span>
                 <span className="case-meta-item__value">{cs.role}</span>
               </div>
               <div className="case-meta-item">
-                <span className="case-meta-item__label">Duration</span>
+                <span className="case-meta-item__label">{t.case.meta.duration}</span>
                 <span className="case-meta-item__value">{cs.duration}</span>
               </div>
               <div className="case-meta-item">
-                <span className="case-meta-item__label">Client</span>
+                <span className="case-meta-item__label">{t.case.meta.client}</span>
                 <span className="case-meta-item__value">{cs.client}</span>
               </div>
 
@@ -264,7 +272,7 @@ export default function CasePage() {
                   className="case-hero__visit-btn"
                   style={{ '--accent': project.accentColor }}
                 >
-                  Visit site
+                  {t.case.visitSite}
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5.5M11.5 2.5V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -299,8 +307,8 @@ export default function CasePage() {
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}
           variants={fadeUp}
         >
-          <span className="case-section-label">Overview</span>
-          <p className="case-text-section__body">{cs.overview}</p>
+          <span className="case-section-label">{t.case.overview}</span>
+          <p className="case-text-section__body">{loc.overview}</p>
         </motion.section>
 
         {/* Challenge + Solution */}
@@ -310,18 +318,18 @@ export default function CasePage() {
           variants={fadeUp}
         >
           <div className="case-two-col__item">
-            <span className="case-section-label">Challenge</span>
-            <p className="case-two-col__text">{cs.challenge}</p>
+            <span className="case-section-label">{t.case.challenge}</span>
+            <p className="case-two-col__text">{loc.challenge}</p>
           </div>
           <div className="case-two-col__item">
-            <span className="case-section-label">Solution</span>
-            <p className="case-two-col__text">{cs.solution}</p>
+            <span className="case-section-label">{t.case.solution}</span>
+            <p className="case-two-col__text">{loc.solution}</p>
           </div>
         </motion.section>
 
         {/* Dynamic media sections */}
         {cs.sections.map((section, i) => (
-          <CaseSection key={i} section={section} accentColor={project.accentColor} />
+          <CaseSection key={i} section={section} accentColor={project.accentColor} lang={lang} />
         ))}
 
         {/* Results */}
@@ -331,9 +339,9 @@ export default function CasePage() {
           variants={fadeUp}
           style={{ '--accent': project.accentColor }}
         >
-          <span className="case-section-label">Results</span>
+          <span className="case-section-label">{t.case.results}</span>
           <div className="case-results__grid">
-            {cs.results.map((r, i) => (
+            {(loc.results ?? cs.results).map((r, i) => (
               <motion.div
                 key={i}
                 className="case-result-card"
@@ -359,8 +367,8 @@ export default function CasePage() {
         variants={fadeUp}
         style={{ '--next-accent': nextProject.accentColor }}
       >
-        <span className="case-next__label">Next project</span>
-        <Link to={`/case/${nextProject.id}`} className="case-next__link">
+        <span className="case-next__label">{t.case.nextProject}</span>
+        <Link to={`${casePrefix}/${nextProject.id}`} className="case-next__link">
           <span className="case-next__title">{nextProject.title}</span>
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
             <path d="M6 16h20M18 8l8 8-8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
