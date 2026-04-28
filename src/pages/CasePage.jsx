@@ -82,36 +82,41 @@ function CaseSection({ section, accentColor }) {
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}
           variants={fadeUp}
         >
-          <Placeholder ratio={section.ratio} label={section.label} />
+          <Placeholder ratio={section.ratio} label={section.label} image={section.image} video={section.video} />
         </motion.div>
       )
 
-    case 'grid-2':
+    case 'grid-2': {
+      const items = section.items || [{}, {}]
       return (
         <motion.div
           className="case-section case-section--grid-2"
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}
           variants={fadeUp}
         >
-          <Placeholder ratio={section.ratio} label={`${section.label} — left`} />
-          <Placeholder ratio={section.ratio} label={`${section.label} — right`} />
+          <Placeholder ratio={section.ratio} label={`${section.label} — left`}  image={items[0]?.image} video={items[0]?.video} />
+          <Placeholder ratio={section.ratio} label={`${section.label} — right`} image={items[1]?.image} video={items[1]?.video} />
         </motion.div>
       )
+    }
 
-    case 'grid-3':
+    case 'grid-3': {
+      const items = section.items || [{}, {}, {}]
       return (
         <motion.div
           className="case-section case-section--grid-3"
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}
           variants={fadeUp}
         >
-          <Placeholder ratio={section.ratio} label={`${section.label} 1`} />
-          <Placeholder ratio={section.ratio} label={`${section.label} 2`} />
-          <Placeholder ratio={section.ratio} label={`${section.label} 3`} />
+          <Placeholder ratio={section.ratio} label={`${section.label} 1`} image={items[0]?.image} video={items[0]?.video} />
+          <Placeholder ratio={section.ratio} label={`${section.label} 2`} image={items[1]?.image} video={items[1]?.video} />
+          <Placeholder ratio={section.ratio} label={`${section.label} 3`} image={items[2]?.image} video={items[2]?.video} />
         </motion.div>
       )
+    }
 
-    case 'grid-masonry':
+    case 'grid-masonry': {
+      const items = section.items || [{}, {}, {}]
       return (
         <motion.div
           className="case-section case-section--masonry"
@@ -119,14 +124,16 @@ function CaseSection({ section, accentColor }) {
           variants={fadeUp}
         >
           <div className="case-masonry__main">
-            <Placeholder ratio="4/3" label={section.label} />
+            <Placeholder ratio="4/3"  label={section.label} image={items[0]?.image} video={items[0]?.video} />
           </div>
           <div className="case-masonry__side">
-            <Placeholder ratio="3/4" label="Detail" />
-            <Placeholder ratio="16/9" label="Detail" />
+            <Placeholder ratio="3/4"  label="Detail" image={items[1]?.image} video={items[1]?.video} />
+            <Placeholder ratio="16/9" label="Detail" image={items[2]?.image} video={items[2]?.video} />
           </div>
         </motion.div>
       )
+    }
+
 
     case 'quote':
       return (

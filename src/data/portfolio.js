@@ -91,8 +91,13 @@ export const projects = [
       sections: [
         // image/video здесь — отдельный слот для секции в гриде (независимо от heroMedia)
         { type: 'hero', ratio: '16/9', label: '3D map interface' },
-        { type: 'fullwidth', ratio: '21/9', label: 'Platform overview' },
-        { type: 'grid-2', ratio: '4/3', label: 'B2C search flow & B2B dashboard' },
+        { type: 'fullwidth', ratio: '21/9', label: 'Platform overview', image: '/media/aromobilescreens.jpg' },
+        {
+          type: 'grid-2', ratio: '16/10', label: 'B2C search flow & B2B dashboard', items: [
+            { image: '/media/aroprojects.jpg', video: '/media/aroprojects__720p.mp4' },
+            { image: '/media/aro3projectview.jpg' },
+          ]
+        },
         { type: 'grid-3', ratio: '1/1', label: 'Mobile app screens' },
         { type: 'quote', text: "ARO's new design made complex data feel effortless to navigate.", author: 'ARO Product Team' },
         { type: 'grid-masonry', label: 'Component library highlights' },
