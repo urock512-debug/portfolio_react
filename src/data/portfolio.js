@@ -47,8 +47,14 @@ export const projects = [
             { image: '/media/axcapitallisting.jpg' },
           ]
         },
-        { type: 'fullwidth', ratio: '21/9', label: 'Mobile experience' },
-        { type: 'grid-3', ratio: '1/1', label: 'UI components & design tokens' },
+        { type: 'fullwidth', ratio: '21/9', label: 'Mobile experience', image: '/media/axcapitalmobilescreens.jpg' },
+        {
+          type: 'grid-3', ratio: '1/1', label: 'UI components & design tokens', items: [
+            { image: '/media/axcolors.jpg' },
+            { image: '/media/axtypo.jpg' },
+            { image: '/media/axspacing.jpg' },
+          ]
+        },
         { type: 'quote', text: "The new design turned our website into our best-performing sales channel.", author: 'AX Capital Marketing Team' },
         { type: 'grid-masonry', label: 'Visual identity applied across product' },
       ],
@@ -96,7 +102,7 @@ export const projects = [
       ],
       sections: [
         // image/video здесь — отдельный слот для секции в гриде (независимо от heroMedia)
-        { type: 'hero', ratio: '16/9', label: '3D map interface' },
+        { type: 'hero', ratio: '16/9', label: '3D map interface', image: '/media/aro3d.jpg' },
         { type: 'fullwidth', ratio: '21/9', label: 'Platform overview', image: '/media/aromobilescreens.jpg' },
         {
           type: 'grid-2', ratio: '16/10', label: 'B2C search flow & B2B dashboard', items: [
