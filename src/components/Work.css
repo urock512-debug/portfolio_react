@@ -220,6 +220,11 @@
     gap: 1rem;
   }
 
+  .work .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .work__header {
     padding: 0 var(--container-pad);
   }
