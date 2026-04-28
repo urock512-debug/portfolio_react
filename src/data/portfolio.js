@@ -126,7 +126,13 @@ export const projects = [
             { image: '/media/aro3projectview.jpg' },
           ]
         },
-        { type: 'grid-3', ratio: '1/1', label: 'Mobile app screens' },
+        {
+          type: 'grid-3', ratio: '9/19', label: 'Mobile app screens', items: [
+            { image: '/media/aromobile1.jpg' },
+            { image: '/media/aromobile2.jpg' },
+            { image: '/media/aromobile3.jpg' },
+          ]
+        },
         { type: 'quote', text: "ARO's new design made complex data feel effortless to navigate.", textRu: '«Новый дизайн ARO сделал сложные данные интуитивно понятными.»', author: 'ARO Product Team' },
         { type: 'grid-masonry', label: 'Component library highlights' },
       ],
