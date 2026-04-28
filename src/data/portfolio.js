@@ -40,8 +40,13 @@ export const projects = [
         { value: '#1', label: 'Google ranking' },
       ],
       sections: [
-        { type: 'hero', ratio: '16/9', label: 'Homepage hero redesign' },
-        { type: 'grid-2', ratio: '4/3', label: 'Property listing & detail page' },
+        { type: 'hero', ratio: '16/11', label: 'Homepage hero redesign', image: '/media/axcapitalhero.jpg' },
+        {
+          type: 'grid-2', ratio: '4/3', label: 'Property listing & detail page', items: [
+            { image: '/media/axcapitallistings.jpg' },
+            { image: '/media/axcapitallisting.jpg' },
+          ]
+        },
         { type: 'fullwidth', ratio: '21/9', label: 'Mobile experience' },
         { type: 'grid-3', ratio: '1/1', label: 'UI components & design tokens' },
         { type: 'quote', text: "The new design turned our website into our best-performing sales channel.", author: 'AX Capital Marketing Team' },
