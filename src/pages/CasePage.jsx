@@ -282,7 +282,7 @@ export default function CasePage() {
           transition={{ delay: 0.5, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <Placeholder
-            ratio="16/9"
+            ratio={cs.heroMedia?.ratio ?? '16/9'}
             label="Hero screen"
             image={cs.heroMedia?.image}
             video={cs.heroMedia?.video}

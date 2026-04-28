@@ -75,6 +75,7 @@ export const projects = [
       heroMedia: {
         image: '/media/aropreviewimage.jpg',
         video: '/media/aropreview_1080p.mp4',
+        ratio: '16/11',
       },
       overview:
         "ARO is a next-generation real estate platform combining a 3D interactive map of Dubai with smart property search for both buyers and agents. The challenge was designing a complex B2B/B2C product that feels intuitive for all user types.",
