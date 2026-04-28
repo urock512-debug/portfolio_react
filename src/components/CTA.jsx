@@ -1,5 +1,6 @@
 /* ─── CTA Section ─── */
 import { motion } from 'framer-motion'
+import { asset } from '../utils/asset'
 import './CTA.css'
 
 
@@ -41,19 +42,19 @@ const contactLinkItemVariants = {
 const CTA = () => {
   const contactLinks = [
     {
-      icon: <img src="/icons/email.svg" alt="Email" width="24" height="24" />,
+      icon: <img src={asset('/icons/email.svg')} alt="Email" width="24" height="24" />,
       label: 'Email',
       value: 'mailto:urock512@gmail.com',
       shortvalue: 'urock512@gmail.com',
     },
     {
-      icon: <img src="/icons/linkedin.svg" alt="LinkedIn" width="24" height="24" />,
+      icon: <img src={asset('/icons/linkedin.svg')} alt="LinkedIn" width="24" height="24" />,
       label: 'LinkedIn',
       value: 'https://linkedin.com/in/tikigeek',
       shortvalue: 'linkedin.com/in/tikigeek',
     },
     {
-      icon: <img src="/icons/telegram.svg" alt="Telegram" width="24" height="24" />,
+      icon: <img src={asset('/icons/telegram.svg')} alt="Telegram" width="24" height="24" />,
       label: 'Telegram',
       value: 'http://t.me/iurii_t',
       shortvalue: '@iurii_t',

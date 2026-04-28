@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { projects } from '../data/portfolio'
+import { asset } from '../utils/asset'
 import './Work.css'
 
 const fadeUp = {
@@ -130,7 +131,7 @@ function ProjectCard({ project, index }) {
         {/* Thumbnail */}
         {hasMedia && project.media.thumbnail && (
           <img
-            src={project.media.thumbnail}
+            src={asset(project.media.thumbnail)}
             alt={`${project.title} preview`}
             className="project-card__thumb"
           />
@@ -140,7 +141,7 @@ function ProjectCard({ project, index }) {
         {hasVideo && (
           <video
             ref={videoRef}
-            src={project.media.preview}
+            src={asset(project.media.preview)}
             className={`project-card__video${isHovered ? ' is-playing' : ''}`}
             loop={project.media.loop ?? true}
             muted

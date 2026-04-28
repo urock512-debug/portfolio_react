@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import { projects } from '../data/portfolio'
+import { asset } from '../utils/asset'
 import './CasePage.css'
 
 /* ── Animation variants ── */
@@ -33,8 +34,8 @@ function Placeholder({ ratio = '16/9', label, image, video }) {
         {video ? (
           <video
             className="case-placeholder__video"
-            src={video}
-            poster={image}
+            src={asset(video)}
+            poster={asset(image)}
             autoPlay
             loop
             muted
@@ -44,7 +45,7 @@ function Placeholder({ ratio = '16/9', label, image, video }) {
         ) : image ? (
           <img
             className="case-placeholder__video"
-            src={image}
+            src={asset(image)}
             alt={label || 'Preview'}
           />
         ) : (

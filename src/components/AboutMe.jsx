@@ -1,5 +1,6 @@
 /* ─── About Me Section ─── */
 import { motion } from 'framer-motion'
+import { asset } from '../utils/asset'
 import './AboutMe.css'
 
 // Skill data with icons
@@ -56,7 +57,7 @@ const AboutMe = () => {
                   viewport={{ once: true }}
                 >
                   <div className="skill-card__icon">
-                    <img src={skill.icon} alt={skill.name} width="22" height="22" />
+                    <img src={asset(skill.icon)} alt={skill.name} width="22" height="22" />
                   </div>
                   <span className="skill-card__title">{skill.name}</span>
                 </motion.div>
