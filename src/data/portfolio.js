@@ -246,9 +246,14 @@ export const projects = [
         { value: '2×', label: 'Monthly revenue' },
       ],
       sections: [
-        { type: 'hero', ratio: '16/9', label: 'New homepage design' },
-        { type: 'grid-2', ratio: '4/3', label: 'Booking flow & quote calculator' },
-        { type: 'fullwidth', ratio: '21/9', label: 'Services overview page' },
+        { type: 'hero', ratio: '16/9', label: 'New homepage design', image: '/media/bampreview_img.jpg' },
+        {
+          type: 'grid-2', ratio: '4/3', label: 'Booking flow & quote calculator', items: [
+            { image: '/media/bam1.jpg' },
+            { image: '/media/bam2.jpg' },
+          ]
+        },
+        { type: 'fullwidth', ratio: '21/9', label: 'Services overview page', video: '/media/bamreviews.mp4' },
         { type: 'grid-3', ratio: '1/1', label: 'Mobile screens' },
         { type: 'quote', text: "The booking plugin transformed how we run the business — it's now our main sales channel.", textRu: '«Плагин бронирования изменил наш бизнес — теперь это наш главный канал продаж.»', author: 'Big Apple Moving Management' },
         { type: 'grid-masonry', label: 'UI details & interactions' },

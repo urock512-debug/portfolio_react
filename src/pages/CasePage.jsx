@@ -12,7 +12,7 @@ import './CasePage.css'
 const pageVariants = {
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } },
-  exit:    { opacity: 0, y: -20, transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] } },
+  exit: { opacity: 0, y: -20, transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] } },
 }
 
 const fadeUp = {
@@ -96,7 +96,7 @@ function CaseSection({ section, accentColor, lang }) {
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}
           variants={fadeUp}
         >
-          <Placeholder ratio={section.ratio} label={`${section.label} — left`}  image={items[0]?.image} video={items[0]?.video} />
+          <Placeholder ratio={section.ratio} label={`${section.label} — left`} image={items[0]?.image} video={items[0]?.video} />
           <Placeholder ratio={section.ratio} label={`${section.label} — right`} image={items[1]?.image} video={items[1]?.video} />
         </motion.div>
       )
@@ -117,24 +117,24 @@ function CaseSection({ section, accentColor, lang }) {
       )
     }
 
-    case 'grid-masonry': {
-      const items = section.items || [{}, {}, {}]
-      return (
-        <motion.div
-          className="case-section case-section--masonry"
-          initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}
-          variants={fadeUp}
-        >
-          <div className="case-masonry__main">
-            <Placeholder ratio="4/3"  label={section.label} image={items[0]?.image} video={items[0]?.video} />
-          </div>
-          <div className="case-masonry__side">
-            <Placeholder ratio="3/4"  label="Detail" image={items[1]?.image} video={items[1]?.video} />
-            <Placeholder ratio="16/9" label="Detail" image={items[2]?.image} video={items[2]?.video} />
-          </div>
-        </motion.div>
-      )
-    }
+    // case 'grid-masonry': {
+    //   const items = section.items || [{}, {}, {}]
+    //   return (
+    //     <motion.div
+    //       className="case-section case-section--masonry"
+    //       initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}
+    //       variants={fadeUp}
+    //     >
+    //       <div className="case-masonry__main">
+    //         <Placeholder ratio="4/3"  label={section.label} image={items[0]?.image} video={items[0]?.video} />
+    //       </div>
+    //       <div className="case-masonry__side">
+    //         <Placeholder ratio="3/4"  label="Detail" image={items[1]?.image} video={items[1]?.video} />
+    //         <Placeholder ratio="16/9" label="Detail" image={items[2]?.image} video={items[2]?.video} />
+    //       </div>
+    //     </motion.div>
+    //   )
+    // }
 
 
     case 'quote':
@@ -212,7 +212,7 @@ export default function CasePage() {
       >
         <button onClick={() => navigate(-1)} className="case-back__btn">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M15 9H3M3 9l5-5M3 9l5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M15 9H3M3 9l5-5M3 9l5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           {t.case.back}
         </button>
@@ -274,7 +274,7 @@ export default function CasePage() {
                 >
                   {t.case.visitSite}
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5.5M11.5 2.5V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5.5M11.5 2.5V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </a>
               )}
@@ -371,7 +371,7 @@ export default function CasePage() {
         <Link to={`${casePrefix}/${nextProject.id}`} className="case-next__link">
           <span className="case-next__title">{nextProject.title}</span>
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <path d="M6 16h20M18 8l8 8-8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M6 16h20M18 8l8 8-8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </Link>
       </motion.div>
