@@ -129,7 +129,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 20px;
+  border-radius: 18px;
   padding: 2px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 40%, transparent 60%, rgba(255, 255, 255, 0.1));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
