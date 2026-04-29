@@ -234,7 +234,7 @@ export const projects = [
         video: '/media/bampreview_1080p.mp4',
       },
       overview:
-        "Big Apple Moving is a Dubai-based relocation company serving both residential and corporate clients. The project involved a full website redesign plus custom WordPress plugin development for online booking and inventory tracking.",
+        "Big Apple Moving is a NY-based relocation company serving both residential and corporate clients. The project involved a full website redesign plus custom WordPress plugin development for online booking and inventory tracking.",
       challenge:
         "The old website was outdated, mobile-unfriendly, and relied entirely on phone calls for bookings. There was no way for clients to get instant quotes or track their moves.",
       solution:
@@ -254,13 +254,19 @@ export const projects = [
           ]
         },
         { type: 'fullwidth', ratio: '21/9', label: 'Services overview page', video: '/media/bamreviews.mp4' },
-        { type: 'grid-3', ratio: '1/1', label: 'Mobile screens' },
+        {
+          type: 'grid-3', ratio: '9/19', label: 'Mobile screens', items: [
+            { image: '/media/bammobile1.jpg' },
+            { image: '/media/bammobile2.jpg' },
+            { image: '/media/bammobile3.jpg' },
+          ]
+        },
         { type: 'quote', text: "The booking plugin transformed how we run the business — it's now our main sales channel.", textRu: '«Плагин бронирования изменил наш бизнес — теперь это наш главный канал продаж.»', author: 'Big Apple Moving Management' },
         { type: 'grid-masonry', label: 'UI details & interactions' },
       ],
       ru: {
         overview:
-          "Big Apple Moving — дубайская компания по переезду, обслуживающая как частных, так и корпоративных клиентов. Проект включал полный редизайн сайта и разработку кастомного плагина WordPress для онлайн-бронирования и учёта имущества.",
+          "Big Apple Moving — компания по переезду в Нью-Йорке, обслуживающая как частных, так и корпоративных клиентов. Проект включал полный редизайн сайта и разработку кастомного плагина WordPress для онлайн-бронирования и учёта имущества.",
         challenge:
           "Старый сайт был устаревшим, неудобным на мобильных и полностью зависел от телефонных звонков для приёма заявок. У клиентов не было возможности получить мгновенный расчёт или отследить статус переезда.",
         solution:
