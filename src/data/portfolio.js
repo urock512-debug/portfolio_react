@@ -1,76 +1,74 @@
 export const projects = [
   {
-    id: 'axcapital',
-    title: 'AX CAPITAL',
-    subtitle: 'The Most Trusted Real Estate Agency in Dubai',
-    description: 'UX/UI design for a premium real estate agency. Focused on lead generation, conversion and brand positioning.',
-    descriptionRu: 'UX/UI дизайн для премиального агентства недвижимости. Фокус на лидогенерации, конверсии и позиционировании бренда.',
-    tags: ['Real Estate', 'Corporate Website'],
-    url: 'https://axcapital.ae',
-    color: '#1a1a2e',
-    accentColor: '#6366f1',
+    id: 'paxful',
+    title: 'Paxful',
+    subtitle: 'P2P Crypto Marketplace',
+    description: 'Freelance UI design for landing and marketing pages. Created custom vector icon set used across Security Features section.',
+    descriptionRu: 'Freelance UI дизайн лендингов и маркетинговых страниц. Создание кастомного набора иконок для раздела Безопасности.',
+    tags: ['Fintech', 'Crypto'],
+    url: null,
+    color: '#0e1a14',
+    accentColor: '#22c55e',
     image: null,
-    // Карточка на главной
     media: {
-      thumbnail: '/media/axcapitalthumbnail.jpg',
-      preview: '/media/axcapitalpreview_720p.mp4',
+      thumbnail: '/media/paxfulpreview.jpg',
+      preview: '/media/paxful_1080.mp4',
       isVideoPreview: true,
       loop: true,
       autoplay: false,
     },
     caseStudy: {
-      year: '2023',
-      role: 'Lead UX/UI Designer',
-      duration: '3 months',
-      client: 'AX Capital Real Estate',
-      // Верхний hero-блок страницы кейса
+      year: '2022',
+      role: 'UI Designer (Freelance)',
+      duration: '2 months',
+      client: 'Paxful Inc.',
       heroMedia: {
-        image: '/media/axcapitalpreview.jpg',
-        video: '/media/axcapitalpreview_1080p.mp4',
+        image: '/media/paxfulpreview.jpg',
+        video: '/media/paxful_1080.mp4',
       },
       overview:
-        "AX Capital is one of Dubai's top real estate agencies, handling billions in property transactions annually. The goal was to redesign their digital presence to reflect their premium positioning and significantly improve lead generation.",
+        "Paxful is one of the world's largest peer-to-peer Bitcoin marketplaces. I was brought in to redesign key marketing and landing pages, and to create a cohesive custom icon set for the Security section.",
       challenge:
-        "The existing website had fragmented UX, poor mobile performance, and no clear conversion funnel. Leads were being lost at multiple touchpoints.",
+        "The marketing pages lacked visual consistency and failed to communicate trust — a critical factor for a crypto platform. The Security section in particular felt generic and unconvincing.",
       solution:
-        "We rebuilt the information architecture from scratch, introduced a streamlined property search experience, and created a design system aligned with the brand's luxury identity. Every screen was optimised for conversion with clear CTAs and trust signals.",
+        "I designed a full custom vector icon set of 40+ icons aligned with the brand language, and rebuilt the landing pages with a stronger visual hierarchy, cleaner layout, and trust-forward messaging.",
       results: [
-        { value: '+58%', label: 'Lead conversion' },
-        { value: '2.4×', label: 'Session duration' },
-        { value: '-34%', label: 'Bounce rate' },
-        { value: '#1', label: 'Google ranking' },
+        { value: '40+', label: 'Custom icons created' },
+        { value: '+22%', label: 'Page conversion' },
+        { value: '2 mo', label: 'Delivery timeline' },
+        { value: '100%', label: 'Brand consistency' },
       ],
       sections: [
-        { type: 'hero', ratio: '16/11', label: 'Homepage hero redesign', image: '/media/axcapitalhero.jpg' },
+        { type: 'hero', ratio: '16/9', label: 'Landing page redesign', image: '/media/paxfulhero.jpg' },
         {
-          type: 'grid-2', ratio: '4/3', label: 'Property listing & detail page', items: [
-            { image: '/media/axcapitallistings.jpg' },
-            { image: '/media/axcapitallisting.jpg' },
+          type: 'grid-2', ratio: '16/11', label: 'Security section before & after', items: [
+            { image: '/media/paxfulsecurity.jpg' },
+            { image: '/media/paxfulsecurityfeatures.jpg' },
           ]
         },
-        { type: 'fullwidth', ratio: '21/9', label: 'Mobile experience', image: '/media/axcapitalmobilescreens.jpg' },
+        { type: 'fullwidth', ratio: '21/9', label: 'Icon system overview', image: '/media/paxfulreviewsection.jpg' },
         {
-          type: 'grid-3', ratio: '1/1', label: 'UI components & design tokens', items: [
-            { image: '/media/axcolors.jpg' },
-            { image: '/media/axtypo.jpg' },
-            { image: '/media/axspacing.jpg' },
+          type: 'grid-3', ratio: '1/1', label: 'Individual icon designs', items: [
+            { image: '/media/paxfulicons1.jpg' },
+            { image: '/media/paxfulicons2.jpg' },
+            { image: '/media/paxfulicons3.jpg' },
           ]
         },
-        { type: 'quote', text: "The new design turned our website into our best-performing sales channel.", textRu: '«Новый дизайн превратил наш сайт в лучший канал продаж.»', author: 'AX Capital Marketing Team' },
-        { type: 'grid-masonry', label: 'Visual identity applied across product' },
+        { type: 'quote', text: "The icon set gave our security messaging the credibility it needed.", textRu: '«Иконки придали нашим материалам о безопасности необходимую убедительность.»', author: 'Paxful Design Team' },
+        { type: 'grid-masonry', label: 'Marketing page variations' },
       ],
       ru: {
         overview:
-          "AX Capital — одно из ведущих агентств недвижимости Дубая, ежегодно проводящее сделки на миллиарды долларов. Задача — редизайн цифрового присутствия бренда, отражающий его премиальное позиционирование и значительно улучшающий лидогенерацию.",
+          "Paxful — один из крупнейших в мире P2P-маркетплейсов для Bitcoin. Меня привлекли для редизайна ключевых маркетинговых страниц и создания единого набора кастомных иконок для раздела Безопасности.",
         challenge:
-          "Существующий сайт страдал от фрагментированного UX, низкой мобильной производительности и отсутствия чёткой конверсионной воронки. Лиды терялись в нескольких точках контакта.",
+          "Маркетинговые страницы страдали от визуальной непоследовательности и не внушали доверия — критического фактора для криптоплатформы. Раздел «Безопасность» выглядел особенно слабо и неубедительно.",
         solution:
-          "Мы полностью переработали информационную архитектуру, внедрили удобный поиск объектов и создали дизайн-систему, соответствующую премиальному стилю бренда. Каждый экран оптимизирован для конверсии с чёткими CTA и элементами доверия.",
+          "Я разработал кастомный набор из 40+ иконок, согласованных с языком бренда, и пересобрал лендинги с более сильной визуальной иерархией, чистой вёрсткой и убедительными сигналами доверия.",
         results: [
-          { value: '+58%', label: 'Конверсия лидов' },
-          { value: '2.4×', label: 'Длительность сессии' },
-          { value: '-34%', label: 'Показатель отказов' },
-          { value: '#1', label: 'Позиция в Google' },
+          { value: '40+', label: 'Иконок создано' },
+          { value: '+22%', label: 'Конверсия страниц' },
+          { value: '2 мес', label: 'Срок сдачи' },
+          { value: '100%', label: 'Консистентность бренда' },
         ],
       },
     },
@@ -153,53 +151,77 @@ export const projects = [
     },
   },
   {
-    id: 'paxful',
-    title: 'Paxful',
-    subtitle: 'P2P Crypto Marketplace',
-    description: 'Freelance UI design for landing and marketing pages. Created custom vector icon set used across Security Features section.',
-    descriptionRu: 'Freelance UI дизайн лендингов и маркетинговых страниц. Создание кастомного набора иконок для раздела Безопасности.',
-    tags: ['Fintech', 'Crypto'],
-    url: null,
-    color: '#0e1a14',
-    accentColor: '#22c55e',
+    id: 'axcapital',
+    title: 'AX CAPITAL',
+    subtitle: 'The Most Trusted Real Estate Agency in Dubai',
+    description: 'UX/UI design for a premium real estate agency. Focused on lead generation, conversion and brand positioning.',
+    descriptionRu: 'UX/UI дизайн для премиального агентства недвижимости. Фокус на лидогенерации, конверсии и позиционировании бренда.',
+    tags: ['Real Estate', 'Corporate Website'],
+    url: 'https://axcapital.ae',
+    color: '#1a1a2e',
+    accentColor: '#6366f1',
     image: null,
+    // Карточка на главной
+    media: {
+      thumbnail: '/media/axcapitalthumbnail.jpg',
+      preview: '/media/axcapitalpreview_720p.mp4',
+      isVideoPreview: true,
+      loop: true,
+      autoplay: false,
+    },
     caseStudy: {
-      year: '2022',
-      role: 'UI Designer (Freelance)',
-      duration: '2 months',
-      client: 'Paxful Inc.',
+      year: '2023',
+      role: 'Lead UX/UI Designer',
+      duration: '3 months',
+      client: 'AX Capital Real Estate',
+      // Верхний hero-блок страницы кейса
+      heroMedia: {
+        image: '/media/axcapitalpreview.jpg',
+        video: '/media/axcapitalpreview_1080p.mp4',
+      },
       overview:
-        "Paxful is one of the world's largest peer-to-peer Bitcoin marketplaces. I was brought in to redesign key marketing and landing pages, and to create a cohesive custom icon set for the Security section.",
+        "AX Capital is one of Dubai's top real estate agencies, handling billions in property transactions annually. The goal was to redesign their digital presence to reflect their premium positioning and significantly improve lead generation.",
       challenge:
-        "The marketing pages lacked visual consistency and failed to communicate trust — a critical factor for a crypto platform. The Security section in particular felt generic and unconvincing.",
+        "The existing website had fragmented UX, poor mobile performance, and no clear conversion funnel. Leads were being lost at multiple touchpoints.",
       solution:
-        "I designed a full custom vector icon set of 40+ icons aligned with the brand language, and rebuilt the landing pages with a stronger visual hierarchy, cleaner layout, and trust-forward messaging.",
+        "We rebuilt the information architecture from scratch, introduced a streamlined property search experience, and created a design system aligned with the brand's luxury identity. Every screen was optimised for conversion with clear CTAs and trust signals.",
       results: [
-        { value: '40+', label: 'Custom icons created' },
-        { value: '+22%', label: 'Page conversion' },
-        { value: '2 mo', label: 'Delivery timeline' },
-        { value: '100%', label: 'Brand consistency' },
+        { value: '+58%', label: 'Lead conversion' },
+        { value: '2.4×', label: 'Session duration' },
+        { value: '-34%', label: 'Bounce rate' },
+        { value: '#1', label: 'Google ranking' },
       ],
       sections: [
-        { type: 'hero', ratio: '16/9', label: 'Landing page redesign' },
-        { type: 'grid-2', ratio: '4/3', label: 'Security section before & after' },
-        { type: 'fullwidth', ratio: '21/9', label: 'Icon system overview' },
-        { type: 'grid-3', ratio: '1/1', label: 'Individual icon designs' },
-        { type: 'quote', text: "The icon set gave our security messaging the credibility it needed.", textRu: '«Иконки придали нашим материалам о безопасности необходимую убедительность.»', author: 'Paxful Design Team' },
-        { type: 'grid-masonry', label: 'Marketing page variations' },
+        { type: 'hero', ratio: '16/11', label: 'Homepage hero redesign', image: '/media/axcapitalhero.jpg' },
+        {
+          type: 'grid-2', ratio: '4/3', label: 'Property listing & detail page', items: [
+            { image: '/media/axcapitallistings.jpg' },
+            { image: '/media/axcapitallisting.jpg' },
+          ]
+        },
+        { type: 'fullwidth', ratio: '21/9', label: 'Mobile experience', image: '/media/axcapitalmobilescreens.jpg' },
+        {
+          type: 'grid-3', ratio: '1/1', label: 'UI components & design tokens', items: [
+            { image: '/media/axcolors.jpg' },
+            { image: '/media/axtypo.jpg' },
+            { image: '/media/axspacing.jpg' },
+          ]
+        },
+        { type: 'quote', text: "The new design turned our website into our best-performing sales channel.", textRu: '«Новый дизайн превратил наш сайт в лучший канал продаж.»', author: 'AX Capital Marketing Team' },
+        { type: 'grid-masonry', label: 'Visual identity applied across product' },
       ],
       ru: {
         overview:
-          "Paxful — один из крупнейших в мире P2P-маркетплейсов для Bitcoin. Меня привлекли для редизайна ключевых маркетинговых страниц и создания единого набора кастомных иконок для раздела Безопасности.",
+          "AX Capital — одно из ведущих агентств недвижимости Дубая, ежегодно проводящее сделки на миллиарды долларов. Задача — редизайн цифрового присутствия бренда, отражающий его премиальное позиционирование и значительно улучшающий лидогенерацию.",
         challenge:
-          "Маркетинговые страницы страдали от визуальной непоследовательности и не внушали доверия — критического фактора для криптоплатформы. Раздел «Безопасность» выглядел особенно слабо и неубедительно.",
+          "Существующий сайт страдал от фрагментированного UX, низкой мобильной производительности и отсутствия чёткой конверсионной воронки. Лиды терялись в нескольких точках контакта.",
         solution:
-          "Я разработал кастомный набор из 40+ иконок, согласованных с языком бренда, и пересобрал лендинги с более сильной визуальной иерархией, чистой вёрсткой и убедительными сигналами доверия.",
+          "Мы полностью переработали информационную архитектуру, внедрили удобный поиск объектов и создали дизайн-систему, соответствующую премиальному стилю бренда. Каждый экран оптимизирован для конверсии с чёткими CTA и элементами доверия.",
         results: [
-          { value: '40+', label: 'Иконок создано' },
-          { value: '+22%', label: 'Конверсия страниц' },
-          { value: '2 мес', label: 'Срок сдачи' },
-          { value: '100%', label: 'Консистентность бренда' },
+          { value: '+58%', label: 'Конверсия лидов' },
+          { value: '2.4×', label: 'Длительность сессии' },
+          { value: '-34%', label: 'Показатель отказов' },
+          { value: '#1', label: 'Позиция в Google' },
         ],
       },
     },
