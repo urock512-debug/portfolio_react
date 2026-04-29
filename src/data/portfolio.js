@@ -112,7 +112,7 @@ export const projects = [
         { value: '3×', label: 'Agent retention' },
         { value: '+71%', label: 'Map engagement' },
         { value: '-45%', label: 'Onboarding drop-off' },
-        { value: '4.8★', label: 'App store rating' },
+        { value: '+28%', label: 'Sales Conversion' },
       ],
       sections: [
         // image/video здесь — отдельный слот для секции в гриде (независимо от heroMedia)
@@ -145,7 +145,7 @@ export const projects = [
           { value: '3×', label: 'Удержание агентов' },
           { value: '+71%', label: 'Вовлечённость в карту' },
           { value: '-45%', label: 'Отток при онбординге' },
-          { value: '4.8★', label: 'Рейтинг в App Store' },
+          { value: '+28%', label: 'Конверсия в сделку' },
         ],
       },
     },
@@ -189,7 +189,7 @@ export const projects = [
         { value: '+58%', label: 'Lead conversion' },
         { value: '2.4×', label: 'Session duration' },
         { value: '-34%', label: 'Bounce rate' },
-        { value: '#1', label: 'Google ranking' },
+        { value: '4.8★', label: 'Google rating' },
       ],
       sections: [
         { type: 'hero', ratio: '16/11', label: 'Homepage hero redesign', image: '/media/axcapitalhero.jpg' },
@@ -221,7 +221,7 @@ export const projects = [
           { value: '+58%', label: 'Конверсия лидов' },
           { value: '2.4×', label: 'Длительность сессии' },
           { value: '-34%', label: 'Показатель отказов' },
-          { value: '#1', label: 'Позиция в Google' },
+          { value: '4.8★', label: 'Рейтинг в Google' },
         ],
       },
     },
