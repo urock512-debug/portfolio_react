@@ -1,6 +1,7 @@
 /* Hero section */
 import { motion } from 'framer-motion'
 import { useT } from '../hooks/useT'
+import { asset } from '../utils/asset'
 import './Hero.css'
 
 const fadeUp = (delay = 0) => ({
@@ -48,7 +49,7 @@ export default function Hero() {
             >
               {t.hero.btnWork}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
             <a
@@ -73,11 +74,11 @@ export default function Hero() {
           <div className="hero__photo-wrap">
             <div className="hero__photo-glow" />
             <div className="hero__photo-placeholder">
-              <img src="/media/photo.png" alt="Your photo" className="hero__photo" />
+              <img src={asset('/media/photo.png')} alt="Your photo" className="hero__photo" />
             </div>
             <div className="hero__badge-exp glass">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M9 2l1.6 4.8H15l-4 2.9 1.5 4.8L9 11.5 5.5 14.5 7 9.7 3 6.8h4.4L9 2z" fill="var(--accent-2)"/>
+                <path d="M9 2l1.6 4.8H15l-4 2.9 1.5 4.8L9 11.5 5.5 14.5 7 9.7 3 6.8h4.4L9 2z" fill="var(--accent-2)" />
               </svg>
               <div>
                 <span className="hero__badge-num">{t.hero.yearsNum}</span>
