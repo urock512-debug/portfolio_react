@@ -63,7 +63,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right column — photo placeholder */}
+        {/* Right column — photo */}
         <motion.div
           className="hero__visual"
           initial={{ opacity: 0, scale: 0.92, x: 40 }}
@@ -73,11 +73,7 @@ export default function Hero() {
           <div className="hero__photo-wrap">
             <div className="hero__photo-glow" />
             <div className="hero__photo-placeholder">
-              <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                <circle cx="40" cy="32" r="18" fill="rgba(124,111,255,0.3)"/>
-                <ellipse cx="40" cy="70" rx="28" ry="16" fill="rgba(124,111,255,0.2)"/>
-              </svg>
-              <span>Your photo here</span>
+              <img src="/media/photo.png" alt="Your photo" className="hero__photo" />
             </div>
             <div className="hero__badge-exp glass">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
