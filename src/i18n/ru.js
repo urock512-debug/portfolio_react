@@ -4,7 +4,7 @@ const ru = {
     work: 'Работы',
     about: 'Обо мне',
     skills: 'Навыки',
-    contact: 'Контакт',
+    contact: 'Контакты',
     cta: 'Написать',
   },
 
