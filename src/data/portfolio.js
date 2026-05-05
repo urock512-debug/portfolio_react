@@ -1,79 +1,5 @@
 export const projects = [
   {
-    id: 'paxful',
-    title: 'Paxful',
-    subtitle: 'P2P Crypto Marketplace',
-    description: 'Freelance UI design for landing and marketing pages. Created custom vector icon set used across Security Features section.',
-    descriptionRu: 'Freelance UI дизайн лендингов и маркетинговых страниц. Создание кастомного набора иконок для раздела Безопасности.',
-    tags: ['Fintech', 'Crypto'],
-    url: null,
-    color: '#0e1a14',
-    accentColor: '#22c55e',
-    image: null,
-    media: {
-      thumbnail: '/media/paxfulpreview.jpg',
-      preview: '/media/paxful_1080.mp4',
-      isVideoPreview: true,
-      loop: true,
-      autoplay: false,
-    },
-    caseStudy: {
-      year: '2022',
-      role: 'UI Designer (Freelance)',
-      duration: '2 months',
-      client: 'Paxful Inc.',
-      heroMedia: {
-        image: '/media/paxfulpreview.jpg',
-        video: '/media/paxful_1080.mp4',
-      },
-      overview:
-        "Paxful is one of the world's largest peer-to-peer Bitcoin marketplaces. I was brought in to redesign key marketing and landing pages, and to create a cohesive custom icon set for the Security section.",
-      challenge:
-        "The marketing pages lacked visual consistency and failed to communicate trust — a critical factor for a crypto platform. The Security section in particular felt generic and unconvincing.",
-      solution:
-        "I designed a full custom vector icon set of 40+ icons aligned with the brand language, and rebuilt the landing pages with a stronger visual hierarchy, cleaner layout, and trust-forward messaging.",
-      results: [
-        { value: '40+', label: 'Custom icons created' },
-        { value: '+22%', label: 'Page conversion' },
-        { value: '2 mo', label: 'Delivery timeline' },
-        { value: '100%', label: 'Brand consistency' },
-      ],
-      sections: [
-        { type: 'hero', ratio: '16/9', label: 'Landing page redesign', image: '/media/paxfulhero.jpg' },
-        {
-          type: 'grid-2', ratio: '16/11', label: 'Security section before & after', items: [
-            { image: '/media/paxfulsecurity.jpg' },
-            { image: '/media/paxfulsecurityfeatures.jpg' },
-          ]
-        },
-        { type: 'fullwidth', ratio: '21/9', label: 'Icon system overview', image: '/media/paxfulreviewsection.jpg' },
-        {
-          type: 'grid-3', ratio: '1/1', label: 'Individual icon designs', items: [
-            { image: '/media/paxfulicons1.jpg' },
-            { image: '/media/paxfulicons2.jpg' },
-            { image: '/media/paxfulicons3.jpg' },
-          ]
-        },
-        { type: 'quote', text: "The icon set gave our security messaging the credibility it needed.", textRu: '«Иконки придали нашим материалам о безопасности необходимую убедительность.»', author: 'Paxful Design Team' },
-        { type: 'grid-masonry', label: 'Marketing page variations' },
-      ],
-      ru: {
-        overview:
-          "Paxful — один из крупнейших в мире P2P-маркетплейсов для Bitcoin. Меня привлекли для редизайна ключевых маркетинговых страниц и создания единого набора кастомных иконок для раздела Безопасности.",
-        challenge:
-          "Маркетинговые страницы страдали от визуальной непоследовательности и не внушали доверия — критического фактора для криптоплатформы. Раздел «Безопасность» выглядел особенно слабо и неубедительно.",
-        solution:
-          "Я разработал кастомный набор из 40+ иконок, согласованных с языком бренда, и пересобрал лендинги с более сильной визуальной иерархией, чистой вёрсткой и убедительными сигналами доверия.",
-        results: [
-          { value: '40+', label: 'Иконок создано' },
-          { value: '+22%', label: 'Конверсия страниц' },
-          { value: '2 мес', label: 'Срок сдачи' },
-          { value: '100%', label: 'Консистентность бренда' },
-        ],
-      },
-    },
-  },
-  {
     id: 'aro',
     title: 'ARO',
     subtitle: 'PropTech · Platform',
@@ -222,6 +148,80 @@ export const projects = [
           { value: '2.4×', label: 'Длительность сессии' },
           { value: '-34%', label: 'Показатель отказов' },
           { value: '4.8★', label: 'Рейтинг в Google' },
+        ],
+      },
+    },
+  },
+  {
+    id: 'paxful',
+    title: 'Paxful',
+    subtitle: 'P2P Crypto Marketplace',
+    description: 'Freelance UI design for landing and marketing pages. Created custom vector icon set used across Security Features section.',
+    descriptionRu: 'Freelance UI дизайн лендингов и маркетинговых страниц. Создание кастомного набора иконок для раздела Безопасности.',
+    tags: ['Fintech', 'Crypto'],
+    url: null,
+    color: '#0e1a14',
+    accentColor: '#22c55e',
+    image: null,
+    media: {
+      thumbnail: '/media/paxfulpreview.jpg',
+      preview: '/media/paxful_1080.mp4',
+      isVideoPreview: true,
+      loop: true,
+      autoplay: false,
+    },
+    caseStudy: {
+      year: '2022',
+      role: 'UI Designer (Freelance)',
+      duration: '2 months',
+      client: 'Paxful Inc.',
+      heroMedia: {
+        image: '/media/paxfulpreview.jpg',
+        video: '/media/paxful_1080.mp4',
+      },
+      overview:
+        "Paxful is one of the world's largest peer-to-peer Bitcoin marketplaces. I was brought in to redesign key marketing and landing pages, and to create a cohesive custom icon set for the Security section.",
+      challenge:
+        "The marketing pages lacked visual consistency and failed to communicate trust — a critical factor for a crypto platform. The Security section in particular felt generic and unconvincing.",
+      solution:
+        "I designed a full custom vector icon set of 40+ icons aligned with the brand language, and rebuilt the landing pages with a stronger visual hierarchy, cleaner layout, and trust-forward messaging.",
+      results: [
+        { value: '40+', label: 'Custom icons created' },
+        { value: '+22%', label: 'Page conversion' },
+        { value: '2 mo', label: 'Delivery timeline' },
+        { value: '100%', label: 'Brand consistency' },
+      ],
+      sections: [
+        { type: 'hero', ratio: '16/9', label: 'Landing page redesign', image: '/media/paxfulhero.jpg' },
+        {
+          type: 'grid-2', ratio: '16/11', label: 'Security section before & after', items: [
+            { image: '/media/paxfulsecurity.jpg' },
+            { image: '/media/paxfulsecurityfeatures.jpg' },
+          ]
+        },
+        { type: 'fullwidth', ratio: '21/9', label: 'Icon system overview', image: '/media/paxfulreviewsection.jpg' },
+        {
+          type: 'grid-3', ratio: '1/1', label: 'Individual icon designs', items: [
+            { image: '/media/paxfulicons1.jpg' },
+            { image: '/media/paxfulicons2.jpg' },
+            { image: '/media/paxfulicons3.jpg' },
+          ]
+        },
+        { type: 'quote', text: "The icon set gave our security messaging the credibility it needed.", textRu: '«Иконки придали нашим материалам о безопасности необходимую убедительность.»', author: 'Paxful Design Team' },
+        { type: 'grid-masonry', label: 'Marketing page variations' },
+      ],
+      ru: {
+        overview:
+          "Paxful — один из крупнейших в мире P2P-маркетплейсов для Bitcoin. Меня привлекли для редизайна ключевых маркетинговых страниц и создания единого набора кастомных иконок для раздела Безопасности.",
+        challenge:
+          "Маркетинговые страницы страдали от визуальной непоследовательности и не внушали доверия — критического фактора для криптоплатформы. Раздел «Безопасность» выглядел особенно слабо и неубедительно.",
+        solution:
+          "Я разработал кастомный набор из 40+ иконок, согласованных с языком бренда, и пересобрал лендинги с более сильной визуальной иерархией, чистой вёрсткой и убедительными сигналами доверия.",
+        results: [
+          { value: '40+', label: 'Иконок создано' },
+          { value: '+22%', label: 'Конверсия страниц' },
+          { value: '2 мес', label: 'Срок сдачи' },
+          { value: '100%', label: 'Консистентность бренда' },
         ],
       },
     },
