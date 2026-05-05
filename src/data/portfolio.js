@@ -161,7 +161,7 @@ export const projects = [
     tags: ['Fintech', 'Crypto'],
     url: null,
     color: '#0e1a14',
-    accentColor: '#22c55e',
+    accentColor: '#22c55eff',
     image: null,
     media: {
       thumbnail: '/media/paxfulpreview.jpg',
